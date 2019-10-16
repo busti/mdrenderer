@@ -2,3 +2,8 @@
 /project/target/
 /target/
 /target/scala-2.13/classes/
+
+/.idea
+
+/static/input
+/static/output

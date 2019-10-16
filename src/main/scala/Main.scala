@@ -9,15 +9,14 @@ import laika.markdown.github.GitHubFlavor
 object Main extends App {
   implicit def better2java(file: File): JFile = file.toJava
 
-  val static  = currentWorkingDirectory / "static"
-  val pregen  = static / "pregen"
-  val input   = static / "input"
-  val userdef = input  / "userdef"
-  val output  = static / "output"
+  val static = currentWorkingDirectory / "static"
+  val pregen = static / "pregen"
+  val input  = static / "input"
+  val output = static / "output"
 
-  userdef.clear()
+  input.clear()
   output.clear()
-  pregen.copyTo(userdef)
+  pregen.copyTo(input)
 
   Transform.
     from(Markdown)

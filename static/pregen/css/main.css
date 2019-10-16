@@ -9,11 +9,37 @@ html, body {
     flex-wrap: wrap;
 }
 
-.wrapper.toc {
+.wrapper > .toc {
     min-width: 10%;
     max-width: 20%;
 
-    background: lightblue;
+    background: #333;
+
+    overflow: auto;
+}
+
+.toc .toc {
+    margin: 0;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.toc li {
+    margin: 1em;
+    white-space: nowrap;
+    color: white;
+}
+
+.toc a:link, .toc a:visited, .toc a:hover, .toc a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    text-decoration: underline;
 }
 
 .markdown-body {
@@ -27,5 +53,10 @@ html, body {
 @media (max-width: 767px) {
     .markdown-body {
         padding: 15px;
+    }
+
+    .wrapper > .toc {
+        width: 100%;
+        max-width: 100%;
     }
 }
